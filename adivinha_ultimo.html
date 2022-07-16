@@ -1,0 +1,84 @@
+<meta charset="UTF-8">
+
+<input/>
+<button><big>Chuta um número e aperta aqui bobão<big></button>
+
+<script>
+	function pulaLinha() {
+		document.write("<br>");
+	}
+
+	function mostra(frase) {
+		document.write(frase);
+		pulaLinha();
+	}
+
+	var input = document.querySelector("input");
+	input.focus();
+
+	function sorteia() {
+		return Math.round(Math.random()*100);
+	}
+
+	function gerador(quantidade) {
+		var respostas = [];
+		var numero = 1
+		
+		while(numero<respostas); {
+			
+			var numeroAleatorio = sorteia()
+			
+			if (numeroAleatorio !== 0) {
+				var achou = false;
+				for(var posicao = 0; posicao < segredos.length; posicao++)
+					if(segredos[posicao] == numeroAleatorio){
+						achou = true
+						break;
+					}
+					if(achou==false){
+						segredos.push(sorteia());
+						numero++
+					}
+
+			}
+
+
+		}
+		return respostas
+
+
+	}
+
+	function verifica() {
+		
+		var achou = false;
+
+		for(var posicao = 0; posicao < respostas.length; posicao++) {
+
+			if(input.value == respostas[posicao]){
+			
+				alert("Você acertou!");
+				achou = true;
+			break;
+			}
+		}
+			if(achou=false) {
+			
+				alert("Você errou");
+			
+			}
+			 
+	input.value =""; //Caxinha reseta, após a resposta
+	input.focus(); //A caixinha ganha foco
+}
+	
+
+	var button = document.querySelector("button"); 
+	
+	button.onclick  = verifica; 
+
+
+
+
+
+</script>
